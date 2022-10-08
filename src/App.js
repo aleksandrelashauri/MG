@@ -1,12 +1,13 @@
 import './App.css';
-import Component from './components/data';
+import Data from './components/Data';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Component/>
+        Distance Counter
       </header>
+          <Data/>
     </div>
   );
 }

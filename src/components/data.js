@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 
-function Component() {
+function Data() {
   const token = "EDcLQeibkAADEkEoyYBWn7bf2ssKZ";
   const [data, setData] = useState([]);
   const [origins, setOrigins] = useState("tbilisi");
@@ -34,7 +35,7 @@ function Component() {
     }
   };
   return (
-    <div>
+    <div className="data">
       <input value={origins} onChange={(e) => setOrigins(e.target.value)} />
       {/* <input value={waypont} onChange={(e) => setWypont(e.target.value)} /> */}
       <input
@@ -44,7 +45,7 @@ function Component() {
       <div>
         {data?.map(({ elements }) => {
           return elements.map(({ distance }) => {
-            return <div>{distance.text}</div>;
+            return <div  key={uuidv4()}>Distance {distance.text}</div>;
           });
         })}
       </div>
@@ -53,4 +54,4 @@ function Component() {
   );
 }
 
-export default Component;
+export default Data;
